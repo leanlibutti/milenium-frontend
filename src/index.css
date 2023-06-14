@@ -1,0 +1,125 @@
+:root {
+  --primary-red: #ee464f;
+  --primary-blue: #396e9c;
+}
+
+html {
+  background-color: rgb(250, 250, 250);
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Loader sign in Styles */
+
+.lds-ring {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 1rem;
+  border: 8px solid var(--primary-red);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--primary-red) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader sign up Styles */
+
+.sign-up {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.sign-up div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin: 1rem;
+  border: 8px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: sign-up 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--primary-blue) transparent transparent transparent;
+}
+
+.sign-up div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.sign-up div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.sign-up div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes sign-up {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.active {
+  font-weight: bold;
+  color: var(--primary-red) !important;
+}
+
+.add-info-form {
+  top: 2vw;
+}
+
+.drag-over {
+  background-color: #d5d5d5;
+}
+
+@media screen and (max-width: 480px) {
+  .add-btn {
+    margin-bottom: 1rem;
+  }
+}
