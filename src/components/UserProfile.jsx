@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
 import styled from 'styled-components'
 import { FaEdit } from 'react-icons/fa'
-import uploadPhoto from '../static/upload-photo.json'
 
 import defaultPhoto from '../assets/default_user.jpg'
 import { Colors } from '../constants/Colors'
@@ -233,12 +232,7 @@ export const UserProfile = ({ email }) => {
                 style={{ width: '25vw', height: '30vw', cursor: 'pointer' }}
               />
             ) : (
-              <UploadAnimation
-                uploadFiles={uploadFiles}
-                animation={uploadPhoto}
-                height="25vw"
-                width="30vw"
-              />
+              <UploadAnimation uploadFiles={uploadFiles} />
             )}
             {errorInput && <ErrorInput>{errorInput}</ErrorInput>}
             {userPhoto && (

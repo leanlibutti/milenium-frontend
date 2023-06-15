@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import uploadImage from '../assets/upload-image.jpg'
+import uploadImage from '../assets/upload-image.png'
 
 export const UploadAnimation = ({ uploadFiles }) => {
   return (
@@ -15,4 +15,8 @@ const AnimationContainer = styled.div`
     cursor: pointer;
   }
 `
-const Img = styled.img``
+const Img = styled.img`
+  width: 20vw;
+  height: 20vw;
+  margin: 5vw;
+`
