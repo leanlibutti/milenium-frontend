@@ -40,7 +40,7 @@ export const FetchPostData = async ({ path, data }) => {
       body: JSON.stringify(data),
       withCredentials: true
     })
-
+    console.log(res.headers);
     if (!resp.ok) {
       if (resp.status === 422) {
         throw new Error(`El email ingresado no existe en la base de datos.`)
