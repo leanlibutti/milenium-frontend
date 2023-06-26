@@ -484,7 +484,7 @@ const FormRoutine = ({ users, dbLocal }) => {
           ))}
         </List>
       )}
-      {noData && (
+      {noData && dayData!==null && (
         <TextNoData>
           Sin rutina para el día{' '}
           {dbLocal.days.find((d) => d.value === dayData).day}.

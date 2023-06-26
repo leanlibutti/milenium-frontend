@@ -4,7 +4,6 @@ import { AiOutlineArrowUp } from 'react-icons/ai'
 
 import homeHour from '../assets/home-hour.gif'
 import homeSlogan from '../assets/home-slogan.gif'
-import homeInfo from '../assets/home-info.gif'
 import { NutritionalPlan } from './NutritionalPlan'
 import { Routine } from './Routine'
 import { Colors } from '../constants/Colors'
@@ -24,7 +23,7 @@ export const Home = ({ months, weight, height }) => {
   const [addInfo, setAddInfo] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
 
-  const images = [homeHour, homeInfo, homeSlogan]
+  const images = [homeHour, homeSlogan]
 
   const handleNavigation = (scroll) => {
     const $scrollBtn = document.querySelector('.scroll-top-btn')

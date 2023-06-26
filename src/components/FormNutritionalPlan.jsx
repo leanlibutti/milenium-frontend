@@ -884,7 +884,7 @@ export const FormNutritionalPlan = ({ users, dbLocal }) => {
           </List>
         </MealContainer>
       )}
-      {noData && (
+      {noData && dayData !== null && (
         <TextNoData>
           Sin plan nutricional para el día{' '}
           {dbLocal.days.find((d) => d.value === dayData).day}.

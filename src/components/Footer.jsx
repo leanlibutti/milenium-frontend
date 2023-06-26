@@ -13,7 +13,7 @@ export const Footer = () => {
         <NameGym>Milenium Gimnasio</NameGym>
         <Info>Calle 4 n°539 e/42 y 43</Info>
         <Info>Tel: (0221) 526-1149</Info>
-        <Info>Contacto: mileniumgim@hotmail.com</Info>
+        <Info>Contacto: mileniumgimnasiolp@gmail.com</Info>
         <Info>V 0.1.0 - Beta</Info>
       </LeftContent>
       <CenterContent>

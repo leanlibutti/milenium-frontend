@@ -12,78 +12,6 @@ const { primaryBlue, secondaryBlue, colorText } = Colors
 export const BillItem = ({ bill, user, months }) => {
   const month = months.find((m) => m.value === bill.month).month
 
-  /* useEffect(() => {
-    if (user) {
-      const newDoc = (
-        <Document>
-          <Page
-            size="A5"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'white'
-            }}
-          >
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                textAlign: 'center',
-                backgroundColor: 'white',
-                padding: 1
-              }}
-            >
-              <Image
-                src={logo}
-                alt="random image"
-                style={{ maxWidth: '150px', maxHeight: 'auto', top: '-10vw' }}
-              />
-              <Text
-                style={{
-                  color: `${primaryBlue}`,
-                  fontSize: '36px',
-                  alignItems: 'center',
-                  margin: 'auto auto 10vw auto',
-                  fontWeight: 'bold'
-                }}
-              >
-                Pago {month} - {bill.year}
-              </Text>
-
-              <Text style={{ textAlign: 'justify', marginTop: '30px' }}>
-                Usuario: {user.username} {user.surname}.
-              </Text>
-              <Text style={{ textAlign: 'justify', marginTop: '30px' }}>
-                Email: {user.email}.
-              </Text>
-              <Text style={{ textAlign: 'justify', marginTop: '30px' }}>
-                Fecha: {bill.day} de {month} del {bill.year}.
-              </Text>
-              <Text style={{ textAlign: 'justify', marginTop: '30px' }}>
-                Monto: ${bill.mount}.
-              </Text>
-              <Image
-                src={seal}
-                alt="random image"
-                style={{
-                  maxWidth: '120px',
-                  maxHeight: '120px',
-                  marginLeft: '60%',
-                  top: '10vw',
-                  transform: 'rotate(-15)'
-                }}
-              />
-            </View>
-          </Page>
-        </Document>
-      )
-      setDoc(newDoc)
-    }
-  }, [user, bill, month]) */
-
   async function createPDFWithReactPDF() {
     const pdfDoc = await PDFDocument.create()
     const page = pdfDoc.addPage()
@@ -167,7 +95,7 @@ export const BillItem = ({ bill, user, months }) => {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `${user.username} ${user.surname} - ${bill.month} ${bill.year}`
+    link.download = `Pago mes ${month} del ${bill.year} - ${user.username} ${user.surname}`
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -207,6 +135,10 @@ const BillButton = styled.button`
   :hover {
     cursor: pointer;
     background-color: ${secondaryBlue};
+  }
+
+  :active{
+    transform: translateY(1.1);
   }
 `
 
