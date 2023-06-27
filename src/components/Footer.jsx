@@ -14,7 +14,7 @@ export const Footer = () => {
         <Info>Calle 4 n°539 e/42 y 43</Info>
         <Info>Tel: (0221) 526-1149</Info>
         <Info>Contacto: mileniumgimnasiolp@gmail.com</Info>
-        <Info>V 0.1.0 - Beta</Info>
+        <Info>V 1.0.0 </Info>
       </LeftContent>
       <CenterContent>
         <Logo src={logo} />
