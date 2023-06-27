@@ -51,15 +51,6 @@ export const FetchPostData = async ({ path, data }) => {
 
       throw new Error('Error en la respuesta del servidor')
     }
-    if (resp.ok) {
-      const headers = {};
-      for (const [name, value] of resp.headers.entries()) {
-        headers[name] = value;
-      }
-  
-      // Mostrar los headers en formato JSON
-      console.log(JSON.stringify(headers));
-    }
 
     if (
       path === process.env.REACT_APP_LOGIN ||
