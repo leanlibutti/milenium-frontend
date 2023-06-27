@@ -40,13 +40,6 @@ export const FetchPostData = async ({ path, data }) => {
       body: JSON.stringify(data),
       withCredentials: true
     })
-    const headers = {};
-    for (const [name, value] of resp.headers.entries()) {
-      headers[name] = value;
-    }
-
-    // Mostrar los headers en formato JSON
-    console.log(JSON.stringify(headers));
     if (!resp.ok) {
       if (resp.status === 422) {
         throw new Error(`El email ingresado no existe en la base de datos.`)
@@ -57,6 +50,15 @@ export const FetchPostData = async ({ path, data }) => {
       }
 
       throw new Error('Error en la respuesta del servidor')
+    }
+    if (resp.ok) {
+      const headers = {};
+      for (const [name, value] of resp.headers.entries()) {
+        headers[name] = value;
+      }
+  
+      // Mostrar los headers en formato JSON
+      console.log(JSON.stringify(headers));
     }
 
     if (
