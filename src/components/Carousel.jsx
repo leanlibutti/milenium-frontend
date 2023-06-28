@@ -105,7 +105,7 @@ const CarouselContainer = styled.div`
 
 const CarouselImage = styled.img`
   width: 100%;
-  min-height: 500px;
+  min-height: 150px;
   height: auto;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
