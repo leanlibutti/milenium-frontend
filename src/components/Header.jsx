@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import logo from '../assets/logo.png'
 import { MenuHeader } from './MenuHeader'
 
-export const Header = ({ username, login, admin }) => {
+export const Header = ({ id, login, admin }) => {
   const redirectHome = () => {
     window.location.assign('/')
   }
@@ -11,7 +11,7 @@ export const Header = ({ username, login, admin }) => {
   return (
     <HeaderContainer>
       <Logo src={logo} onClick={redirectHome} />
-      <MenuHeader username={username} login={login} admin={admin} />
+      <MenuHeader id={id} login={login} admin={admin} />
     </HeaderContainer>
   )
 }

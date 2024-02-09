@@ -21,6 +21,7 @@ import dbLocal from './static/db_local.json'
 import { FetchGetData } from './helpers/FetchGetData'
 
 const initialData = {
+  id: null,
   email: null,
   username: null,
   surname: null,
@@ -68,17 +69,17 @@ function App() {
       setLogin(false)
     }
 
-    if (user.username === undefined) {
+    if (user.id === undefined) {
       window.location.reload()
     }
   }, [user])
-
+  console.log(user)
   return (
     <Container>
-      {user !== null && user.username !== undefined && (
+      {user !== null && user.id !== undefined && (
         <Router>
           {login && (
-            <Header username={user.username} login={login} admin={user.admin} />
+            <Header id={user.id} login={login} admin={user.admin} />
           )}
           <Routes>
             {!login && (
@@ -108,14 +109,14 @@ function App() {
               />
               <Route
                 exact
-                path={`/usuario/${user.username}`}
+                path={`/usuario/${user.id}`}
                 element={<UserProfile email={user.email} />}
               />
               <Route
                 exact
                 path="/change-password"
                 element={
-                  <ChangePassword username={user.username} email={user.email} />
+                  <ChangePassword id={user.id} email={user.email} />
                 }
               />
             </Route>

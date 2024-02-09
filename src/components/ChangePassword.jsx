@@ -23,7 +23,7 @@ const {
   secondaryRed
 } = Colors
 
-export const ChangePassword = ({ username, email }) => {
+export const ChangePassword = ({ id, email }) => {
   const [dataUpdate, setDataUpdate] = useState(initialData)
   const [errors, setErrors] = useState({})
   const [viewPassword, setViewPassword] = useState(false)
@@ -49,7 +49,7 @@ export const ChangePassword = ({ username, email }) => {
   }
 
   const handleBack = () => {
-    window.location.href = `/usuario/${username}`
+    window.location.href = `/usuario/${id}`
   }
 
   const handleSubmit = async (e) => {

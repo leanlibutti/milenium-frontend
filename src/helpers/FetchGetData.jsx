@@ -2,7 +2,6 @@ export const FetchGetData = async (path) => {
   const token = localStorage.getItem('token')
   let headers = {}
   const url = process.env.REACT_APP_BASE_URL + path
-  console.log({token});
 
   if (token === null) {
     headers = {
@@ -10,7 +9,6 @@ export const FetchGetData = async (path) => {
       'X-Requested-With': 'XMLHttpRequest'
     }
   } else {
-    console.log("test");
     headers = {
       Origin: process.env.REACT_APP_BASE_URL,
       'X-Requested-With': 'XMLHttpRequest',
