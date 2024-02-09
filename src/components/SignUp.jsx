@@ -29,43 +29,62 @@ export const SignUp = ({ setUser }) => {
   const [viewPassword, setViewPassword] = useState(false)
 
   const onValidate = () => {
-    let errorsForm = {}
-    const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/
-    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/
+    let errorsForm = {};
+    const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
     if (!dataRegister.name.trim()) {
-      errorsForm.name = `Este campo no debe ser vacío.`
+        errorsForm.name = `Este campo no debe ser vacío.`;
     } else if (!regexName.test(dataRegister.name)) {
-      errorsForm.name = 'Este campo solo acepta letras y espacios.'
+        errorsForm.name = 'Este campo solo acepta letras y espacios.';
     }
 
     if (!dataRegister.surname.trim()) {
-      errorsForm.surname = `Este campo no debe ser vacío.`
+        errorsForm.surname = `Este campo no debe ser vacío.`;
     } else if (!regexName.test(dataRegister.surname)) {
-      errorsForm.surname = 'Este campo solo acepta letras y espacios.'
+        errorsForm.surname = 'Este campo solo acepta letras y espacios.';
     }
 
     if (!dataRegister.email.trim()) {
-      errorsForm.email = `Este campo no debe ser vacío.`
+        errorsForm.email = `Este campo no debe ser vacío.`;
     } else if (!regexEmail.test(dataRegister.email)) {
-      errorsForm.email = 'Correo no válido.'
+        errorsForm.email = 'Correo no válido.';
     }
 
     if (dataRegister.gender === '') {
-      errorsForm.gender = `Este campo no debe ser vacío.`
+        errorsForm.gender = `Este campo no debe ser vacío.`;
     }
 
     if (!dataRegister.date.trim()) {
-      errorsForm.date = `Este campo no debe ser vacío.`
+        errorsForm.date = `Este campo no debe ser vacío.`;
+    } else {
+
+        let today = new Date();
+        let birthDate = new Date(dataRegister.date);
+
+        if (birthDate > today) {
+            errorsForm.date = 'La fecha de nacimiento no puede ser mayor que la fecha actual.';
+        } else {
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let monthDiff = today.getMonth() - birthDate.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 15) {
+                errorsForm.date = 'Debes tener al menos 15 años para registrarte.';
+            }
+        }
     }
 
     if (dataRegister.password.length < 8) {
-      errorsForm.password = `La contraseña debe tener más de 8 caracteres.`
+        errorsForm.password = `La contraseña debe tener más de 8 caracteres.`;
     }
 
     if (dataRegister.password !== dataRegister.confirmPassword) {
-      errorsForm.password = `La contraseña y su confirmación no coinciden.`
-      errorsForm.confirmPassword = `La contraseña y su confirmación no coinciden.`
+        errorsForm.password = `La contraseña y su confirmación no coinciden.`;
+        errorsForm.confirmPassword = `La contraseña y su confirmación no coinciden.`;
     }
 
     return errorsForm

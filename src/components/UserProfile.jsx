@@ -207,7 +207,7 @@ export const UserProfile = ({ email }) => {
     <ProfileContainer>
       <PhotoContainer>
         <UserPhoto src={userPhoto ? userPhoto : defaultPhoto} />
-        {<FaEdit size="1.5rem" onClick={handleModal} />}
+        {/* {<FaEdit size="1.5rem" onClick={handleModal} />} */}
       </PhotoContainer>
       <Modal
         state={changePhoto}
